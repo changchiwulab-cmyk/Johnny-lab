@@ -50,7 +50,7 @@ python3 ai_os.py ingest notes/raw/sample_ai_os_note.md
 
 會產生：
 
-- `wiki/sources/sample_ai_os_note.md`
+- `wiki/sources/sample-ai-os-note.md`
 - `wiki/concepts/*.md`
 - 更新 `memory/memory.md`
 - 更新 `logs/run.log`
@@ -105,4 +105,4 @@ python3 ai_os.py run-skill one_person_company_review "我要把 AI OS 用在一�
 
 ## 已知限制
 
-- 重複 ingest 同一份 raw 檔案時，`memory/memory.md` 會持續追加條目（此 MVP 尚未做去重）。
+- 同一份 raw 檔案重複 ingest 時，`memory/memory.md` 會依 source path 去重，但 `logs/run.log` 仍會持續追加執行紀錄。

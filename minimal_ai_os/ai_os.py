@@ -172,13 +172,16 @@ def ingest(file_path: str) -> None:
             existing += link_line
         cpath.write_text(existing, encoding="utf-8")
 
-    with MEMORY_FILE.open("a", encoding="utf-8") as f:
-        f.write(f"\n## {created} — {title}\n")
-        f.write(f"- Source summary: `wiki/sources/{source_slug}.md`\n")
-        if concepts:
-            f.write(f"- Concepts: {', '.join(concepts)}\n")
-        if bullets:
-            f.write(f"- Decision-useful note: {bullets[0]}\n")
+    memory_text = read_file(MEMORY_FILE) if MEMORY_FILE.exists() else ""
+    source_marker = f"- Source summary: `wiki/sources/{source_slug}.md`"
+    if source_marker not in memory_text:
+        with MEMORY_FILE.open("a", encoding="utf-8") as f:
+            f.write(f"\n## {created} — {title}\n")
+            f.write(f"{source_marker}\n")
+            if concepts:
+                f.write(f"- Concepts: {', '.join(concepts)}\n")
+            if bullets:
+                f.write(f"- Decision-useful note: {bullets[0]}\n")
 
     write_log(f"ingest: {path} -> {source_md}")
     print(f"OK: ingested '{title}'")
