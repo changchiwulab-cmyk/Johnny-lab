@@ -1,0 +1,15 @@
+.DS_Store
+__pycache__/
+*.pyc
+.env
+
+# Runtime outputs
+logs/run.log
+wiki/sources/*.md
+wiki/concepts/*.md
+
+# Keep folder skeleton in git
+!wiki/sources/.gitkeep
+!wiki/concepts/.gitkeep
+!logs/.gitkeep
+!artifacts/.gitkeep
