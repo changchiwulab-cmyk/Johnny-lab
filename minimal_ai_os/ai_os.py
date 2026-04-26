@@ -268,6 +268,7 @@ def run_skill(skill_name: str, task: str) -> None:
     print("- 待驗證資訊：")
     print("- 高風險假設：")
     print("- 最大失敗原因：")
+    print("- 最大成功原因：")
     print("- 對一人公司的價值：")
     print("- 成本與執行難度：")
     print("- 風險與限制：")
