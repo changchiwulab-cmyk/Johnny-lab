@@ -1,0 +1,9 @@
+# skill
+
+## Definition
+
+待補。
+
+## Linked Sources
+
+- [[../sources/sample-ai-os-note|Karpathy LLM Wiki + Thin Harness / Fat Skills 測試筆記]] — 2026-04-26 08:31:25
